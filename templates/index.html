@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+            integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+            crossorigin="anonymous"></script>
+
+    <title>JavaScript - Drag and Drop Demo</title>
+</head>
+
+<body>
+<img src="../static/shopping-cart.png" id="cart" class="droppable" style="width: 200px; height:200px;">
+
+<div id="fruits" style="align-content: center; padding-left: 100px;padding-top: 100px;">
+    <img src="../static/orange.png" id="orange" style="width: 100px; height: 100px;">
+    <img src="../static/apple.png" id="apple" style="width: 100px; height: 100px;">
+    <img src="../static/cherries.png" id="cherry" style="width: 100px; height: 100px;">
+    <img src="../static/pineapple.png" id="pineapple" style="width: 100px; height: 100px;">
+</div>
+
+<div id="desk" style="align-content: center; padding-left: 100px;padding-top: 100px;">
+    <img src="../static/bag.png" id="bag" style="width: 100px; height: 100px;">
+    <img src="../static/crayons.png" id="crayons" style="width: 100px; height: 100px;">
+    <img src="../static/eraser.png" id="eraser" style="width: 100px; height: 100px;">
+    <img src="../static/pencil.png" id="pencil" style="width: 100px; height: 100px;">
+    <img src="../static/ruler.png" id="ruler" style="width: 100px; height: 100px;">
+</div>
+
+<div id="score_upate"></div>
+
+<button type="submit" id="request" onclick="doAction(this)">End</button>
+
+</body>
+<script src="../static/drag_drop.js"></script>
+</html>
