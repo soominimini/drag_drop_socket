@@ -4,7 +4,7 @@ var cartX = cart.getBoundingClientRect().x;
 var cartY = cart.getBoundingClientRect().y;
 var cartWidth = cart.getBoundingClientRect().width;
 
-var socket = io();
+// var socket = io.connect('http://127.0.0.1:5000/');
 
 
 // 잠재적 드롭 가능한 요소
@@ -55,24 +55,33 @@ apple.onmousedown = function (event) {
             currentScore += 1;
             console.log("추가");
 
+            var socket = io();
             socket.on('connect', function () {
                 socket.emit('object', {data: 'apple\'added'});
             });
+            socket.on('connect_failed', function() {
+   socket.emit("Sorry, there seems to be an issue with the connection!");
+});
 
         }
         else if (final_locationY >= cartY && final_locationY <= cartY + cartWidth) {
 
             currentScore += 1;
             console.log("추가");
+            var socket = io();
             socket.on('connect', function () {
                 socket.emit('object', {data: 'apple\' added'});
             });
+            socket.on('connect_failed', function() {
+   socket.emit("Sorry, there seems to be an issue with the connection!");
+});
 
         }
 
         else {
             currentScore -= 1;
             console.log("마이너스");
+            var socket = io();
             socket.on('connect', function () {
                 socket.emit('object', {data: 'apple\' removed'});
             });
@@ -124,16 +133,28 @@ orange.onmousedown = function (event) {
         if (final_locationX >= cartX && final_locationX <= cartX + cartWidth) {
             currentScore += 1;
             console.log("orange 추가");
+             var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'orange\'added'});
+            });
         }
         else if (final_locationY >= cartY && final_locationY <= cartY + cartWidth) {
 
             currentScore += 1;
             console.log(" orange 추가");
+             var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'orange\'added'});
+            });
         }
 
         else {
             currentScore -= 1;
             console.log("orange 마이너스");
+             var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'orange\'removed'});
+            });
         }
     };
 
@@ -185,16 +206,28 @@ cherry.onmousedown = function (event) {
         if (final_locationX >= cartX && final_locationX <= cartX + cartWidth) {
             currentScore += 1;
             console.log("추가");
+             var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'cherry\'added'});
+            });
         }
         else if (final_locationY >= cartY && final_locationY <= cartY + cartWidth) {
 
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'cherry\'added'});
+            });
         }
 
         else {
             currentScore -= 1;
             console.log("마이너스");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'cherry\'removed'});
+            });
         }
     };
 
@@ -246,16 +279,28 @@ pineapple.onmousedown = function (event) {
         if (final_locationX >= cartX && final_locationX <= cartX + cartWidth) {
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'pineapple\'added'});
+            });
         }
         else if (final_locationY >= cartY && final_locationY <= cartY + cartWidth) {
 
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'pineapple\'added'});
+            });
         }
 
         else {
             currentScore -= 1;
             console.log("마이너스");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'pineapple\'removed'});
+            });
         }
     };
 
@@ -306,16 +351,28 @@ bag.onmousedown = function (event) {
         if (final_locationX >= cartX && final_locationX <= cartX + cartWidth) {
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'bag\'added'});
+            });
         }
         else if (final_locationY >= cartY && final_locationY <= cartY + cartWidth) {
 
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'bag\'added'});
+            });
         }
 
         else {
             currentScore -= 1;
             console.log("마이너스");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'bag\'removed'});
+            });
         }
     };
 
@@ -366,16 +423,28 @@ crayons.onmousedown = function (event) {
         if (final_locationX >= cartX && final_locationX <= cartX + cartWidth) {
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'crayons\'added'});
+            });
         }
         else if (final_locationY >= cartY && final_locationY <= cartY + cartWidth) {
 
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'crayons\'added'});
+            });
         }
 
         else {
             currentScore -= 1;
             console.log("마이너스");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'crayons\'removed'});
+            });
         }
     };
 
@@ -426,16 +495,28 @@ eraser.onmousedown = function (event) {
         if (final_locationX >= cartX && final_locationX <= cartX + cartWidth) {
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'eraser\'added'});
+            });
         }
         else if (final_locationY >= cartY && final_locationY <= cartY + cartWidth) {
 
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'eraser\'added'});
+            });
         }
 
         else {
             currentScore -= 1;
             console.log("마이너스");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'eraser\'removed'});
+            });
         }
     };
 };
@@ -485,16 +566,28 @@ pencil.onmousedown = function (event) {
         if (final_locationX >= cartX && final_locationX <= cartX + cartWidth) {
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'pencil\'added'});
+            });
         }
         else if (final_locationY >= cartY && final_locationY <= cartY + cartWidth) {
 
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'pencil\'added'});
+            });
         }
 
         else {
             currentScore -= 1;
             console.log("마이너스");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'pencil\'removed'});
+            });
         }
     };
 };
@@ -544,16 +637,28 @@ ruler.onmousedown = function (event) {
         if (final_locationX >= cartX && final_locationX <= cartX + cartWidth) {
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'ruler\'added'});
+            });
         }
         else if (final_locationY >= cartY && final_locationY <= cartY + cartWidth) {
 
             currentScore += 1;
             console.log("추가");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'ruler\'added'});
+            });
         }
 
         else {
             currentScore -= 1;
             console.log("마이너스");
+            var socket = io();
+            socket.on('connect', function () {
+                socket.emit('object', {data: 'ruler\'removed'});
+            });
         }
     };
 };

@@ -1,11 +1,15 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 # socketio = SocketIO(app)
-socketio = SocketIO(app)
+CORS(app)
 
+socketio = SocketIO(app,cors_allowed_origins="*")
+# SocketIO(app,cors_allowed_origins="*")
+# cors_allowed_origins= 'https://localhost'
 f = open("log.txt", 'w')
 
 
